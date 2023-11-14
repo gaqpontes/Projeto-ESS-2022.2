@@ -1,0 +1,95 @@
+[
+  {
+    "stationCode": "e1",
+    "distances": [{ "stationCode": "e2", "distance": 10 }]
+  },
+  {
+    "stationCode": "e2",
+    "distances": [
+      { "stationCode": "e1", "distance": 10 },
+      { "stationCode": "e3", "distance": 8.5 },
+      { "stationCode": "e9", "distance": 10 },
+      { "stationCode": "e10", "distance": 3.5 }
+    ]
+  },
+  {
+    "stationCode": "e3",
+    "distances": [
+      { "stationCode": "e2", "distance": 8.5 },
+      { "stationCode": "e4", "distance": 6.3 },
+      { "stationCode": "e9", "distance": 9.4 },
+      { "stationCode": "e13", "distance": 18.7 }
+    ]
+  },
+  {
+    "stationCode": "e4",
+    "distances": [
+      { "stationCode": "e3", "distance": 6.3 },
+      { "stationCode": "e5", "distance": 13 },
+      { "stationCode": "e8", "distance": 15.3 },
+      { "stationCode": "e13", "distance": 12.8 },
+      { "stationCode": "e14", "distance": 11 }
+    ]
+  },
+  {
+    "stationCode": "e5",
+    "distances": [
+      { "stationCode": "e4", "distance": 13 },
+      { "stationCode": "e6", "distance": 3 },
+      { "stationCode": "e7", "distance": 2.4 },
+      { "stationCode": "e8", "distance": 30 }
+    ]
+  },
+  {
+    "stationCode": "e6",
+    "distances": [{ "stationCode": "e6", "distance": 3 }]
+  },
+  {
+    "stationCode": "e7",
+    "distances": [{ "stationCode": "e5", "distance": 2.4 }]
+  },
+  {
+    "stationCode": "e8",
+    "distances": [
+      { "stationCode": "e5", "distance": 30 },
+      { "stationCode": "e4", "distance": 15.3 },
+      { "stationCode": "e9", "distance": 9.6 },
+      { "stationCode": "e12", "distance": 6.4 }
+    ]
+  },
+  {
+    "stationCode": "e9",
+    "distances": [
+      { "stationCode": "e2", "distance": 10 },
+      { "stationCode": "e3", "distance": 9.4 },
+      { "stationCode": "e8", "distance": 9.6 },
+      { "stationCode": "e11", "distance": 12.2 }
+    ]
+  },
+  {
+    "stationCode": "e10",
+    "distances": [{ "stationCode": "e2", "distance": 3.5 }]
+  },
+  {
+    "stationCode": "e11",
+    "distances": [{ "stationCode": "e9", "distance": 12.2 }]
+  },
+  {
+    "stationCode": "e12",
+    "distances": [{ "stationCode": "e8", "distance": 6.4 }]
+  },
+  {
+    "stationCode": "e13",
+    "distances": [
+      { "stationCode": "e3", "distance": 18.7 },
+      { "stationCode": "e4", "distance": 12.8 }
+    ]
+  },
+  {
+    "stationCode": "e14",
+    "distances": [
+      { "stationCode": "e4", "distance": 11 },
+      { "stationCode": "e13", "distance": 5.1 }
+    ]
+  }
+]
