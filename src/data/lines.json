@@ -1,0 +1,16 @@
+[
+  { "stationCode": "e1", "stationColors": ["blue"] },
+  { "stationCode": "e2", "stationColors": ["blue", "yellow"] },
+  { "stationCode": "e3", "stationColors": ["blue", "red"] },
+  { "stationCode": "e4", "stationColors": ["blue", "green"] },
+  { "stationCode": "e5", "stationColors": ["blue", "yellow"] },
+  { "stationCode": "e6", "stationColors": ["blue"] },
+  { "stationCode": "e7", "stationColors": ["yellow"] },
+  { "stationCode": "e8", "stationColors": ["yellow", "green"] },
+  { "stationCode": "e9", "stationColors": ["yellow", "red"] },
+  { "stationCode": "e10", "stationColors": ["yellow"] },
+  { "stationCode": "e11", "stationColors": ["red"] },
+  { "stationCode": "e12", "stationColors": ["green"] },
+  { "stationCode": "e13", "stationColors": ["green", "red"] },
+  { "stationCode": "e14", "stationColors": ["green"] }
+]
