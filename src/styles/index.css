@@ -1,0 +1,16 @@
+.input-container{
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+#ending-station, #starting-station{
+    margin-bottom: 25px;
+}
+
+label{
+    font-weight: bolder;
+}
+body{
+    background-color: #F5F5F5;
+}

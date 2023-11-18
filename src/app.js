@@ -1,11 +1,10 @@
 const trainSpeed = 30;
-const transferTime = 25 / 60;
+const transferTime = 4 / 60;
 let frontier = [];
 
 function calcA() {
-
-  let startingStation = "E5".toLowerCase();
-  let finalStation = "E9".toLowerCase();
+  let startingStation = document.querySelector("#starting-station").value.toLowerCase();
+  let finalStation = document.querySelector("#ending-station").value.toLowerCase();
   let actualStation = startingStation;
 
   let initialFrontier = {
@@ -21,6 +20,8 @@ function calcA() {
   frontier.push(initialFrontier);
 
   while (actualStation != finalStation && frontier.length > 0) {
+    console.log(actualStation);
+    console.table(frontier);
     let node = frontier.shift();
     let possibleNodes = newRealDistances.find((stationInfo) => {
       return stationInfo.stationCode == node.station;
