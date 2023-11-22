@@ -4,22 +4,26 @@ let frontier = [];
 
 function calcA() {
   let startingStation = document.querySelector("#starting-station").value.toLowerCase();
+  let startingStationColor = document.querySelector("#starting-station-color").value.toLowerCase();
   let finalStation = document.querySelector("#ending-station").value.toLowerCase();
   let actualStation = startingStation;
-
   let initialFrontier = {
     station: actualStation,
-    stationColors: [],
+    stationColors: [startingStationColor],
     stationHistory: [],
     f: null,
     g: 0,
     h: calcHeuristics(actualStation, finalStation),
   };
   initialFrontier.f = initialFrontier.g + initialFrontier.h;
-  initialFrontier.stationColors = getLineColorsByStation(actualStation);
+  if(getLineColorsByStation(actualStation).includes(startingStationColor) == false){
+    alert('Linha não pertence a estação');
+    return;
+  }
   frontier.push(initialFrontier);
 
   while (actualStation != finalStation && frontier.length > 0) {
+    debugger
     console.log(actualStation);
     console.table(frontier);
     let node = frontier.shift();
@@ -44,12 +48,14 @@ function calcA() {
 
       let pNodeHeuristics = calcHeuristics(pNode.stationCode, finalStation);
       let pNodeCost = node.g + pNode.distance / trainSpeed;
+      
       let pNodeHistory = [...node.stationHistory];
+      pNodeHistory.push(node.station);
+
       if (foundStationColor.length == 0) {
         pNodeCost += transferTime;
+        foundStationColor = getLineColorsByStation(pNode.stationCode).filter(element => getLineColorsByStation(node.station).includes(element));
       }
-
-      pNodeHistory.push(node.station);
 
       insertNode({
         station: pNode.stationCode,
@@ -62,7 +68,11 @@ function calcA() {
     });
     actualStation = frontier[0].station;
   }
+
   frontier[0].stationHistory.push(actualStation);
+  console.log(actualStation);
+  console.table(frontier);
+
   console.log("Path: " + frontier[0].stationHistory);
   console.log("Time in minutes: " + (frontier[0].f * 60).toFixed(2));
   frontier = [];
@@ -93,7 +103,7 @@ function getLineColorsByStation(stationCode) {
   let result = lines.find((stationInfo) => {
     return stationInfo.stationCode == stationCode;
   });
-  return result.stationColors;
+  return result ? result.stationColors : [];
 }
 
 function insertNode(frontierToInsert) {
@@ -408,8 +418,7 @@ const newRealDistances = [
       { "stationCode": "e3", "distance": 6.3 },
       { "stationCode": "e5", "distance": 13 },
       { "stationCode": "e8", "distance": 15.3 },
-      { "stationCode": "e13", "distance": 12.8 },
-      { "stationCode": "e14", "distance": 11 }
+      { "stationCode": "e13", "distance": 12.8 }
     ]
   },
   {
@@ -423,7 +432,7 @@ const newRealDistances = [
   },
   {
     "stationCode": "e6",
-    "distances": [{ "stationCode": "e6", "distance": 3 }]
+    "distances": [{ "stationCode": "e5", "distance": 3 }]
   },
   {
     "stationCode": "e7",
@@ -463,13 +472,13 @@ const newRealDistances = [
     "stationCode": "e13",
     "distances": [
       { "stationCode": "e3", "distance": 18.7 },
-      { "stationCode": "e4", "distance": 12.8 }
+      { "stationCode": "e4", "distance": 12.8 },
+      { "stationCode": "e14", "distance": 5.1 }
     ]
   },
   {
     "stationCode": "e14",
     "distances": [
-      { "stationCode": "e4", "distance": 11 },
       { "stationCode": "e13", "distance": 5.1 }
     ]
   }

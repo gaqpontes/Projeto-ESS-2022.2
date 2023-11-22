@@ -4,7 +4,7 @@
   flex-direction: column;
   margin: auto;
 }
-#ending-station, #starting-station{
+#ending-station, #starting-station,#starting-station-color{
     margin-bottom: 25px;
 }
 
