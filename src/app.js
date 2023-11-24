@@ -387,7 +387,7 @@ const newDirectDistances = [
       { "stationCode": "e9", "distance": 26.6 },
       { "stationCode": "e10", "distance": 21.2 },
       { "stationCode": "e11", "distance": 35.5 },
-      { "stationCode": "e12", "distance": 66.6 },
+      { "stationCode": "e12", "distance": 33.6 },
       { "stationCode": "e13", "distance": 5.1 },
       { "stationCode": "e14", "distance": 0 }
     ]
