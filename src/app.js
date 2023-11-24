@@ -23,10 +23,10 @@ function calcA() {
   frontier.push(initialFrontier);
 
   while (actualStation != finalStation && frontier.length > 0) {
-    debugger
-    console.log(actualStation);
-    console.table(frontier);
+    
     let node = frontier.shift();
+    console.log("Nó Atual");
+    console.table(node);
     let possibleNodes = newRealDistances.find((stationInfo) => {
       return stationInfo.stationCode == node.station;
     }).distances;
@@ -66,6 +66,10 @@ function calcA() {
         h: pNodeHeuristics,
       });
     });
+    console.log("Fronteira");
+    console.table(frontier);
+    console.log("####################################################################")
+
     actualStation = frontier[0].station;
   }
 
